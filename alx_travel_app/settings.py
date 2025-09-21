@@ -56,10 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware'
-]
-
-CORS_ALLOW_ALL_ORIGINS = True
+    ]
 
 ROOT_URLCONF = 'alx_travel_app.urls'
 
@@ -131,11 +128,3 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-# Celery Configuration
-CELERY_BROKER_UL = 'amqp://guest:guest@localhost:5672//'
-CELERY_RESULT_BACKEND = 'db+sqlite:///results.sqlite3'  # Example for a simple database backend
-CELERY_ACCEPT_CONTENT = ['json']
-CELERY_TASK_SERIALIZER = 'json'
-CELERY_RESULT_SERIALIZER = 'json'
-CELERY_TIMEZONE = 'UTC'
-CELERY_ENABLE_UTC = True
